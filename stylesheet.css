@@ -118,8 +118,8 @@ footer
   text-align: right; /*originally center for class*/
   clear: both; /*the clear command does not allow floating elements to the specification that you set. like right, left, both, none, initial, and inherit.*/
   padding-top: 50px;
-  color: #fff;
-  background-color: #998891;
+  color: #5e0231;
+  background-color: #fff;
 }
 
 .social-icon {
@@ -127,6 +127,11 @@ footer
   height: 20px;
   margin: 0 5px;
 } /*This will go to the FB and Twitter buttons at the bottom left*/
+
+.footer-nav {
+  color: #5e0231;
+  float: right;
+}
 
 /********************************************************************************
 PAGE: HOME
@@ -225,7 +230,7 @@ COLORS
 body
   {
     background-color: #e9dbe2;
-    color: #000;
+    color: #fff;
     margin: 0;
   }
 
@@ -264,7 +269,7 @@ nav a, nav a:visited
 /* selected nav link */
 nav a.selected, nav a:hover
   {
-    color: #000;
+    color: #5e0231;
   }
 
     /******************************************************
