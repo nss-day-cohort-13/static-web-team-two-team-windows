@@ -50,15 +50,18 @@ HEADING
 header {
   float: left;
   margin: 0 0 30px 0; /*top, right, bottom, left AKA: Clockwise*/
-  padding: 5px 0 0 0; /*top, right, bottom, left AKA: Clockwise*/
+  padding: 25px 10px; /*top, right, bottom, left AKA: Clockwise*/
   width: 100%; /*This element should stretch across the entire page.*/
 }
 
-#logo /*This is the name of the Company "AKA Cupcakes*/
-  {
-    text-align: center;
-    margin: 0;
+  #logo {
+    float: left;
+    margin: .75%;
+    text-align: left;
+    width: 45%;
+    padding: 1.5% 1%;
   }
+
 
 h1
 {
@@ -67,6 +70,7 @@ h1
   font-size: 1.75rem;
   font-weight: normal;
   line-height: 0.8rem;
+  color: #fff;
 }
 
 h2
@@ -114,7 +118,8 @@ footer
   text-align: right; /*originally center for class*/
   clear: both; /*the clear command does not allow floating elements to the specification that you set. like right, left, both, none, initial, and inherit.*/
   padding-top: 50px;
-  color: #000;
+  color: #fff;
+  background-color: #998891;
 }
 
 .social-icon {
@@ -200,15 +205,18 @@ COLORS RIGHT NOW THEY ARE ALL BLACK AS NIGHT EXCEPT FOR BACKGROUND AND NAV LINK
 /*Site Body*/
 body
   {
-    background-color: #fff;
+    background-color: #e9dbe2;
     color: #000;
+    margin: 0;
   }
 
 /*Black Header that is going to remain in the dark until a color scheme is chosen*/
 header
   {
-    background: #000;
-    border-color: #000;
+    color: #fff;
+    background-color: #998891;
+    border-color: #fff;
+    border: none;
   }
 
 /*Nav background on mobile*/
@@ -248,6 +256,25 @@ nav a.selected, nav a:hover
 
 
 @media screen and (min-width: 480px) {
+
+/******************************************************
+    NEED TO MAKE THIS PART WORK AND NOT BE SQUISHY
+    AND NOT BLACK SO PROBS NEED ANOTHER MEDIA QUERY
+    BUT I NEED TO LET IT GO FOR NOW.
+*******************************************************/
+
+  #logo {
+    float: left;
+    margin-left: 2.5%;
+    text-align: left;
+    width: 45%;
+    padding: 1.5% 1%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #fff;
+  }
 
     /******************************************************
     THREE COLUMN LAYOUT I don't know why we are capitalizing
@@ -292,7 +319,7 @@ nav a.selected, nav a:hover
 @media screen and (min-width: 660px) {
 
   /******************************************************
-    Page: Header
+    Page: Header 660px
     *******************************************************/
 
   nav {
@@ -306,13 +333,15 @@ nav a.selected, nav a:hover
 
   #logo {
     float: left;
-    margin-left: 5%;
+    margin: .75%;
     text-align: left;
     width: 45%;
+    padding: 1.5% 1%;
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    color: #fff;
   }
 
  h2 {
