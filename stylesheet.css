@@ -73,13 +73,13 @@ h1
   color: #fff;
 }
 
-h2
+/*h2
 {
   font-size: 0.75rem;
   margin: -5px 0 0;
   font-weight: normal;
 }
-
+*/
 /********************************************************************************
 NAVIGATION
 *********************************************************************************/
@@ -129,26 +129,45 @@ footer
 } /*This will go to the FB and Twitter buttons at the bottom left*/
 
 /********************************************************************************
+PAGE: HOME
+*********************************************************************************/
+
+
+#bakery-window {
+  display: inline-block;
+  float: left;
+  margin: 10%;
+  border-radius: 4%;
+  box-shadow: 10px 10px 5px #888888;
+  position: relative;
+  left: 10px;
+
+}
+
+.info {
+  display: inline-block;
+  float: right;
+  color: #fff;
+  margin: 1em 0;
+}
+
+
+
+/********************************************************************************
 PAGE: Products
 *********************************************************************************/
 
-#gallery
-{
-  margin: 0;
-  padding 0;
-  list-style: none; /*This takes away the bullet points. those fuckers are everywhere.*/
+.product-card {
+  display: inline-block;
+  width: 30%;
+  margin: 1.3333%;
 }
-
-#gallery li
-{
-  float: left;
-  width: 45%;
-  margin: 2.5%;
-  background-color: #000;
-  color: #000;
-
+.product-card img {
+  width: 15rem;
 }
-
+.product-info {
+  padding: 1rem;
+}
 
 /********************************************************************************
 PAGE: ABOUT
@@ -225,7 +244,7 @@ nav
   }
 
 /*logo text*/
-h1, h2
+h1,
   {
     color: #fff;
   }
@@ -343,10 +362,10 @@ nav a.selected, nav a:hover
     color: #fff;
   }
 
- h2 {
-    font-size: 0.825rem;
-    margin-bottom: 20px;
-  }
+ /*h2 {*/
+    /*font-size: 0.825rem;*/
+    /*margin-bottom: 20px;*/
+  /*}*/
 
   header {
     border-bottom: 5px solid #599a68;
