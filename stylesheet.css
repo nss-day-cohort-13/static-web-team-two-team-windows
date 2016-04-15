@@ -1,0 +1,349 @@
+/********************************************************************************
+Welcome to the land of Style.
+Also, I'm learning CSS. So, there will be lots of notes to remind me of what
+things are for and such.
+
+Color scheme: I set everything to black because I needed place holders. Except for
+the body background and the nav links;
+*********************************************************************************/
+
+/********************************************************************************
+GENERAL
+*********************************************************************************/
+* {
+  box-sizing: border-box;
+}
+
+#wrapper
+  {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
+a
+  {
+     text-decoration: none;
+  }
+
+img
+{
+  max-width: 100%;
+} /*fills the width of their parent container. If the parent shrinks: so does the pic.
+ yay mobile site optimization. because everyone is on mobile now and if your site is not
+ mobile optimized you're basically loosing customers by the second. We are selling
+ cupcakes which means when the economy tanks we are expendable af and will
+ be the first to go if our site isn't easy to use */
+
+h3 {
+  margin: 0 0 1rem 0; /*insurance against the h3 heading to be separated from the paragraphs*/
+}
+
+
+
+/********************************************************************************
+HEADING
+*********************************************************************************/
+
+header {
+  float: left;
+  margin: 0 0 30px 0; /*top, right, bottom, left AKA: Clockwise*/
+  padding: 5px 0 0 0; /*top, right, bottom, left AKA: Clockwise*/
+  width: 100%; /*This element should stretch across the entire page.*/
+}
+
+#logo /*This is the name of the Company "AKA Cupcakes*/
+  {
+    text-align: center;
+    margin: 0;
+  }
+
+h1
+{
+  font-family: 'Montserrat', sans-serif; /*Google font Montserrat*/
+  margin: 15px 0;
+  font-size: 1.75rem;
+  font-weight: normal;
+  line-height: 0.8rem;
+}
+
+h2
+{
+  font-size: 0.75rem;
+  margin: -5px 0 0;
+  font-weight: normal;
+}
+
+/********************************************************************************
+NAVIGATION
+*********************************************************************************/
+nav {
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0 0;
+}
+
+
+nav ul {
+  list-style: none;
+  margin: 0 10px; /* that zero on the top and bottom and 10 on the left and right. */
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+ }
+
+
+nav a {
+  font-weight: 800; /*Can you say BOLD?*/
+  padding: 15px 10px; /* yay, space. It was getting crowded and weird*/
+  display: inline-block;
+}
+
+
+
+/********************************************************************************
+FOOTER
+*********************************************************************************/
+footer
+{
+  font-size: 0.75rem;
+  text-align: right; /*originally center for class*/
+  clear: both; /*the clear command does not allow floating elements to the specification that you set. like right, left, both, none, initial, and inherit.*/
+  padding-top: 50px;
+  color: #000;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+} /*This will go to the FB and Twitter buttons at the bottom left*/
+
+/********************************************************************************
+PAGE: Products
+*********************************************************************************/
+
+#gallery
+{
+  margin: 0;
+  padding 0;
+  list-style: none; /*This takes away the bullet points. those fuckers are everywhere.*/
+}
+
+#gallery li
+{
+  float: left;
+  width: 45%;
+  margin: 2.5%;
+  background-color: #000;
+  color: #000;
+
+}
+
+
+/********************************************************************************
+PAGE: ABOUT
+*********************************************************************************/
+
+
+.profile-photo {
+  display: block; /*By default images are displayed inline-block*/
+  max-width: 150px;
+  margin: 0 auto 30px; /*We are using this to center it on the page.*/
+  border-radius: 100%; /*Allows us to add rounded corners.*/
+}/*This is for three profile pics.*/
+
+
+/********************************************************************************
+PAGE: CONTACT
+*********************************************************************************/
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.contact-info a {
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+/*  margin: 0 0 10px;*/
+}
+
+
+
+.contact-info li.facebook a
+{
+  background-image: url('../img/square-facebook-512.png');/*Tell me if I don't need to go up for the file path.The two dots allow us to step up two directories*/
+}
+
+.contact-info li.twitter a
+{
+  background-image: url('../img/twitter_letter-512.png');/*Tell me if I don't need to go up for the file path.The two dots allow us to step up two directories*/
+}
+
+
+
+
+/********************************************************************************
+COLORS RIGHT NOW THEY ARE ALL BLACK AS NIGHT EXCEPT FOR BACKGROUND AND NAV LINK
+*********************************************************************************/
+
+/*Site Body*/
+body
+  {
+    background-color: #fff;
+    color: #000;
+  }
+
+/*Black Header that is going to remain in the dark until a color scheme is chosen*/
+header
+  {
+    background: #000;
+    border-color: #000;
+  }
+
+/*Nav background on mobile*/
+nav
+  {
+    color: #000;
+  }
+
+/*logo text*/
+h1, h2
+  {
+    color: #000;
+  }
+
+/*links*/
+a
+  {
+    color: #000;
+}
+
+/* nav link */
+nav a, nav a:visited
+  {
+    color: #fff;
+  }
+
+/* selected nav link */
+nav a.selected, nav a:hover
+  {
+    color: #000;
+  }
+
+    /******************************************************
+    MEDIA QUERY TIME
+    *******************************************************/
+
+
+
+@media screen and (min-width: 480px) {
+
+    /******************************************************
+    THREE COLUMN LAYOUT I don't know why we are capitalizing
+    everything. I don't like it. So, this stops here.
+    leaving a 10% area open for margin
+    *******************************************************/
+  #primary {
+    width: 30%;
+    float: left;
+  }
+
+  #secondary {
+    width: 30%;
+    float: right;
+  }
+
+  /****************************************************************************************
+  We want three elements side by side when the screen gets large enough to support that.
+  This is the math for figuring it out.
+  3 * 5 = 15% for our margins- here we have 3 columns times (2.5+2.5 which is 5) the 2.5 is the margin on the sides.   So we are up to 15% of space needed for our margins. Everything else is space that needs/can be taken up by
+  the images.
+  100% - 15% = 85%- So, 100% of the space minus the margins which is 15%. gives us 85% of usable space.
+  85% / 3 = 28.333333333333-85% divided by 3 columns that need the space. RESIST the URGE(ent need) to round off to a near percent. what matters in this ship is accuracy. and I run and tight ship.
+   *********************************************************************************************/
+
+
+   /******************************************************
+    Page: Product see that? no caps. still readable.
+    *******************************************************/
+
+  #gallery li {
+    width: 28.3333%; /*Four decimal places of accuracy seems to just about right. little red riding hood style.*/
+  }
+
+  #gallery li:nth-child(4n) {
+    clear: left; /*the clear command does not allow floating elements to the specification that you set. like right, left, both, none, initial, and inherit.*/
+  } /*THIS IS SAYING: I would like this styling to be applied to any fourth element inside of our gallery list items.  We are doing this so it continues the nice set of 3 columns we have going on.*/
+
+
+} /*This only applies if the screen size is larger than 480 px. So larger than your average smartphone*/
+
+@media screen and (min-width: 660px) {
+
+  /******************************************************
+    Page: Header
+    *******************************************************/
+
+  nav {
+    background: none;
+    float: right;
+    font-size: 1.125rem;
+    margin-right: 5%;
+    text-align: right;
+    width: 45%
+  }
+
+  #logo {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 45%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+ h2 {
+    font-size: 0.825rem;
+    margin-bottom: 20px;
+  }
+
+  header {
+    border-bottom: 5px solid #599a68;
+    margin-bottom: 60px;
+  }
+
+} /*This comes into effect once the screen hits 660 px. So tablets and desktops*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
