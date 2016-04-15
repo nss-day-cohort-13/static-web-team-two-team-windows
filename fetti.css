@@ -1,0 +1,14 @@
+.fetti {
+  display: inline-block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /*background-color: red;*/
+}
+
+.fetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
