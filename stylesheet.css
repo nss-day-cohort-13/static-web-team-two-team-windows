@@ -73,13 +73,13 @@ h1
   color: #fff;
 }
 
-h2
+/*h2
 {
   font-size: 0.75rem;
   margin: -5px 0 0;
   font-weight: normal;
 }
-
+*/
 /********************************************************************************
 NAVIGATION
 *********************************************************************************/
@@ -127,6 +127,21 @@ footer
   height: 20px;
   margin: 0 5px;
 } /*This will go to the FB and Twitter buttons at the bottom left*/
+
+/********************************************************************************
+PAGE: HOME
+*********************************************************************************/
+
+#bakery-window {
+  float: left;
+}
+
+.info {
+  /*float: right;*/
+  color: #fff;
+}
+
+
 
 /********************************************************************************
 PAGE: Products
@@ -225,7 +240,7 @@ nav
   }
 
 /*logo text*/
-h1, h2
+h1,
   {
     color: #fff;
   }
@@ -343,10 +358,10 @@ nav a.selected, nav a:hover
     color: #fff;
   }
 
- h2 {
-    font-size: 0.825rem;
-    margin-bottom: 20px;
-  }
+ /*h2 {*/
+    /*font-size: 0.825rem;*/
+    /*margin-bottom: 20px;*/
+  /*}*/
 
   header {
     border-bottom: 5px solid #599a68;
