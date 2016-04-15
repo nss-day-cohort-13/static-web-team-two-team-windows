@@ -199,7 +199,7 @@ PAGE: CONTACT
 
 
 /********************************************************************************
-COLORS RIGHT NOW THEY ARE ALL BLACK AS NIGHT EXCEPT FOR BACKGROUND AND NAV LINK
+COLORS
 *********************************************************************************/
 
 /*Site Body*/
@@ -215,26 +215,25 @@ header
   {
     color: #fff;
     background-color: #998891;
-    border-color: #fff;
     border: none;
   }
 
 /*Nav background on mobile*/
 nav
   {
-    color: #000;
+    color: #fff;
   }
 
 /*logo text*/
 h1, h2
   {
-    color: #000;
+    color: #fff;
   }
 
 /*links*/
 a
   {
-    color: #000;
+    color: #5e0231;
 }
 
 /* nav link */
