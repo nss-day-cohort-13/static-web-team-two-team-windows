@@ -139,23 +139,18 @@ PAGE: HOME
 
 
 #bakery-window {
-  display: inline-block;
+  display: inline;
   float: left;
-  margin: 10%;
+  margin: 2%;
   border-radius: 4%;
-  box-shadow: 10px 10px 5px #888888;
   position: relative;
   left: 10px;
-
 }
-
 .info {
-  display: inline-block;
-  float: right;
+  display: inline;
+  width: 17%;
   color: #fff;
-  margin: 1em 0;
 }
-
 
 
 /********************************************************************************
@@ -213,10 +208,13 @@ PAGE: CONTACT
 {
   background-image: url('../img/square-facebook-512.png');/*Tell me if I don't need to go up for the file path.The two dots allow us to step up two directories*/
 }
-
 .contact-info li.twitter a
 {
   background-image: url('../img/twitter_letter-512.png');/*Tell me if I don't need to go up for the file path.The two dots allow us to step up two directories*/
+}
+.contact-form label{
+  display: block;
+  padding: .5em .5em 0;
 }
 
 /********************************************************************************
