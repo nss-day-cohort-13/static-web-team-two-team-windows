@@ -33,8 +33,13 @@ img
  be the first to go if our site isn't easy to use */
 
 h3 {
-  margin: 0 0 1em 0; /*insurance against the h3 heading to be separated from the paragraphs*/
+  margin: 0 0 1rem 0; /*insurance against the h3 heading to be separated from the paragraphs*/
 }
+
+* {
+  box-sizing: border-box;
+}
+
 
 /********************************************************************************
 HEADING
@@ -57,14 +62,14 @@ h1
 {
   font-family: 'Montserrat', sans-serif; /*Google font Montserrat*/
   margin: 15px 0;
-  font-size: 1.75em;
+  font-size: 1.75rem;
   font-weight: normal;
-  line-height: 0.8em;
+  line-height: 0.8rem;
 }
 
 h2
 {
-  font-size: 0.75em;
+  font-size: 0.75rem;
   margin: -5px 0 0;
   font-weight: normal;
 }
@@ -93,6 +98,7 @@ nav li {
 nav a {
   font-weight: 800; /*Can you say BOLD?*/
   padding: 15px 10px; /* yay, space. It was getting crowded and weird*/
+  display: inline-block;
 }
 
 
@@ -102,7 +108,7 @@ FOOTER
 *********************************************************************************/
 footer
 {
-  font-size: 0.75em;
+  font-size: 0.75rem;
   text-align: right; /*originally center for class*/
   clear: both; /*the clear command does not allow floating elements to the specification that you set. like right, left, both, none, initial, and inherit.*/
   padding-top: 50px;
@@ -116,7 +122,7 @@ footer
 } /*This will go to the FB and Twitter buttons at the bottom left*/
 
 /********************************************************************************
-PAGE: PORTFOLIO
+PAGE: Products
 *********************************************************************************/
 
 #gallery
@@ -158,7 +164,7 @@ PAGE: CONTACT
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 .contact-info a {
@@ -261,11 +267,6 @@ nav a.selected, nav a:hover
     float: right;
   }
 
-  #third {
-    width: 30%;
-    float: ;
-  }
-
   /****************************************************************************************
   We want three elements side by side when the screen gets large enough to support that.
   This is the math for figuring it out.
@@ -277,7 +278,7 @@ nav a.selected, nav a:hover
 
 
    /******************************************************
-    Page: Portfolio see that? no caps. still readable.
+    Page: Product see that? no caps. still readable.
     *******************************************************/
 
   #gallery li {
@@ -300,7 +301,7 @@ nav a.selected, nav a:hover
   nav {
     background: none;
     float: right;
-    font-size: 1.125em;
+    font-size: 1.125rem;
     margin-right: 5%;
     text-align: right;
     width: 45%
@@ -314,11 +315,11 @@ nav a.selected, nav a:hover
   }
 
   h1 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
 
  h2 {
-    font-size: 0.825em;
+    font-size: 0.825rem;
     margin-bottom: 20px;
   }
 
