@@ -10,6 +10,9 @@ the body background and the nav links;
 /********************************************************************************
 GENERAL
 *********************************************************************************/
+* {
+  box-sizing: border-box;
+}
 
 #wrapper
   {
@@ -36,9 +39,6 @@ h3 {
   margin: 0 0 1rem 0; /*insurance against the h3 heading to be separated from the paragraphs*/
 }
 
-* {
-  box-sizing: border-box;
-}
 
 
 /********************************************************************************
@@ -176,21 +176,16 @@ PAGE: CONTACT
 /*  margin: 0 0 10px;*/
 }
 
-.contact-info li.phone a /*The list item has the class called "phone"
-which is why there is no space between the "li" and ".phone"
-if there was a space the code would expect there to be an element nested after the list item.*/
-{
-  background-image: url('../img/phone.png');/*NEED TO GET THESE PHOTOS The two dots allow us to step up two directories*/
-}
 
-.contact-info li.mail a
+
+.contact-info li.facebook a
 {
-  background-image: url('../img/mail.png');/*NEED TO GET THESE PHOTOS The two dots allow us to step up two directories*/
+  background-image: url('../img/square-facebook-512.png');/*Tell me if I don't need to go up for the file path.The two dots allow us to step up two directories*/
 }
 
 .contact-info li.twitter a
 {
-  background-image: url('../img/twitter.png');/*NEED TO GET THESE PHOTOS The two dots allow us to step up two directories*/
+  background-image: url('../img/twitter_letter-512.png');/*Tell me if I don't need to go up for the file path.The two dots allow us to step up two directories*/
 }
 
 
