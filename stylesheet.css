@@ -119,7 +119,7 @@ footer
   clear: both; /*the clear command does not allow floating elements to the specification that you set. like right, left, both, none, initial, and inherit.*/
   padding-top: 50px;
   color: #fff;
-  background-color: #998891;
+  background-color: #EE396B  ;
 }
 
 .social-icon {
@@ -132,25 +132,20 @@ footer
 PAGE: HOME
 *********************************************************************************/
 
-
 #bakery-window {
-  display: inline-block;
+  display: inline;
   float: left;
-  margin: 10%;
+  margin: 2%;
   border-radius: 4%;
   box-shadow: 10px 10px 5px #888888;
   position: relative;
   left: 10px;
-
 }
-
 .info {
-  display: inline-block;
-  float: right;
+  display: inline;
+  width: 17%;
   color: #fff;
-  margin: 1em 0;
 }
-
 
 
 /********************************************************************************
@@ -202,18 +197,33 @@ PAGE: CONTACT
 /*  margin: 0 0 10px;*/
 }
 
+.about-us {
+  align-content: center;
+}
+
+.profile-img {
+  border-radius: 50%
+}
+
+.employee {
+  p {
+    float: right;
+  }/* this isn't working. idky */
+}
 
 
 .contact-info li.facebook a
 {
   background-image: url('../img/square-facebook-512.png');/*Tell me if I don't need to go up for the file path.The two dots allow us to step up two directories*/
 }
-
 .contact-info li.twitter a
 {
   background-image: url('../img/twitter_letter-512.png');/*Tell me if I don't need to go up for the file path.The two dots allow us to step up two directories*/
 }
-
+.contact-form label{
+  display: block;
+  padding: .5em .5em 0;
+}
 
 
 
@@ -224,7 +234,7 @@ COLORS
 /*Site Body*/
 body
   {
-    background-color: #e9dbe2;
+    background-color: #DC6372 ;
     color: #000;
     margin: 0;
   }
@@ -233,8 +243,7 @@ body
 header
   {
     color: #fff;
-    background-color: #998891;
-    border: none;
+    background-color: #008FA1  ;
   }
 
 /*Nav background on mobile*/
@@ -252,7 +261,7 @@ h1,
 /*links*/
 a
   {
-    color: #5e0231;
+    color: #76D6D1;
 }
 
 /* nav link */
