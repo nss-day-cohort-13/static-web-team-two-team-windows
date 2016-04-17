@@ -22,27 +22,27 @@ function fettiBurstOnElement() {
 
   var aWidth = this.offsetWidth;
   var aHeight = this.offsetHeight;
-  var fWidth = this.offsetHeight;
-  var fHeight = this.offsetHeight
+  var fWidth = fettiDiv.offsetWidth;
+  var fHeight = fettiDiv.offsetHeight;
 
   var aCenX = aLeft + aWidth / 2;
   var aCenY = aTop + aHeight / 2;
   var fCenX = fLeft + fWidth / 2;
   var fCenY = fTop + fHeight / 2;
 
-  fettiDiv.style.left = (aCenX - fWidth / 1) + "px";
-  fettiDiv.style.top = (aCenY - fHeight / 1) + "px";
+  fettiDiv.style.left = (aCenX - fWidth / 2) + window.scrollX + "px";
+  fettiDiv.style.top = (aCenY - fHeight / 2) + window.scrollY + "px";
 
-  var fCount = 50;
-  for(var i = 0; i != fCount; ++i) {
+  var fettiPieceCount = 50;
+  for(var i = 0; i != fettiPieceCount; ++i) {
     var piece = document.createElement("div");
     piece.className = "fetti-piece";
     var pWidth = piece.offsetWidth;
     var pHeight = piece.offsetHeight;
 
-    var rVal = parseInt(Math.floor(Math.random() * 8).toString(), 16);
-    var gVal = parseInt(Math.floor(Math.random() * 8).toString(), 16);
-    var bVal = parseInt(Math.floor(Math.random() * 8).toString(), 16);
+    var rVal = Math.floor(Math.random() * 8 + 8).toString(16);
+    var gVal = Math.floor(Math.random() * 8 + 8).toString(16);
+    var bVal = Math.floor(Math.random() * 8 + 8).toString(16);
     piece.style.backgroundColor = "#" + rVal + gVal + bVal;
 
     piece.style.top = (fCenY + fHeight / 2 - pHeight / 2) + "px";
