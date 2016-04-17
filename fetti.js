@@ -30,23 +30,30 @@ for(var i = 0; i != navLinks.length; ++i) {
       var pWidth = piece.offsetWidth;
       var pHeight = piece.offsetHeight;
 
-      var rVal = parseInt(Math.floor(Math.random() * 16).toString(), 16);
-      var gVal = parseInt(Math.floor(Math.random() * 16).toString(), 16);
-      var bVal = parseInt(Math.floor(Math.random() * 16).toString(), 16);
+      var rVal = parseInt(Math.floor(Math.random() * 8).toString(), 16);
+      var gVal = parseInt(Math.floor(Math.random() * 8).toString(), 16);
+      var bVal = parseInt(Math.floor(Math.random() * 8).toString(), 16);
       piece.style.backgroundColor = "#" + rVal + gVal + bVal;
 
       piece.style.top = (fCenY + fHeight / 2 - pHeight / 2) + "px";
       piece.style.left = (fCenX + fWidth / 2 - pWidth / 2) + "px";
 
-      var xTrans = (Math.random() - 0.5) * 100;
-      var yTrans = (Math.random() - 0.5) * 100;
-      piece.style.transition = "translate 10s ease";
-      piece.style.transform = `translate(${xTrans}px, ${yTrans}px)`;
-
       fettiDiv.appendChild(piece);
     }
 
     document.getElementsByTagName("body")[0].appendChild(fettiDiv);
+
+    //NOTE(adam): delayed adding translate css property to prevent browser reflow issues
+    setTimeout(function() {
+      for(var i = 0; i < fettiDiv.children.length; ++i) {
+        var piece = fettiDiv.children[i];
+
+        var xTrans = (Math.random() - 0.5) * 150;
+        var yTrans = (Math.random() - 0.5) * 150;
+
+        piece.style.transform = `translate(${xTrans}px, ${yTrans}px)`;
+      }
+    }, 1);
 
     setTimeout(function() {
       var fettiList = document.getElementsByClassName("fetti");
