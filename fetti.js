@@ -1,8 +1,18 @@
-var navLinks = document.getElementsByClassName("top-nav")[0].getElementsByTagName("a");
+addFettiClickListenerToList(document.getElementsByClassName("top-nav")[0].getElementsByTagName("a"));
+addFettiClickListenerToList(document.getElementsByTagName("img"));
 
-for(var i = 0; i != navLinks.length; ++i) {
-  navLinks[i].onclick = function() {
-    var fettiDiv = document.createElement("div");
+function addFettiClickListener(element) {
+  element.addEventListener("click", fettiBurstOnElement);
+}
+
+function addFettiClickListenerToList(list) {
+  for (var i = list.length - 1; i >= 0; i--) {
+    addFettiClickListener(list[i]);
+  }
+}
+
+function fettiBurstOnElement() {
+  var fettiDiv = document.createElement("div");
     fettiDiv.className = "fetti";
 
     var aLeft = this.getBoundingClientRect().left;
@@ -56,10 +66,6 @@ for(var i = 0; i != navLinks.length; ++i) {
     }, 1);
 
     setTimeout(function() {
-      var fettiList = document.getElementsByClassName("fetti");
-      for(var i = 0; i != fettiList.length; ++i) {
-        fettiList[i].parentElement.removeChild(fettiList[i]);
-      }
+      fettiDiv.parentElement.removeChild(fettiDiv);
     }, 1000);
-  };
-}
+  }
