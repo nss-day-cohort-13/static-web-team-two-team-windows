@@ -1,58 +1,71 @@
-var navLinks = document.getElementsByClassName("top-nav")[0].getElementsByTagName("a");
+addFettiClickListenerToList(document.getElementsByClassName("top-nav")[0].getElementsByTagName("a"));
+addFettiClickListenerToList(document.getElementsByTagName("img"));
 
-for(var i = 0; i != navLinks.length; ++i) {
-  navLinks[i].onclick = function() {
-    var fettiDiv = document.createElement("div");
-    fettiDiv.className = "fetti";
+function addFettiClickListener(element) {
+  element.addEventListener("click", fettiBurstOnElement);
+}
 
-    var aLeft = this.getBoundingClientRect().left;
-    var aTop = this.getBoundingClientRect().top;
-    var fLeft = fettiDiv.getBoundingClientRect().left;
-    var fTop = fettiDiv.getBoundingClientRect().top;
+function addFettiClickListenerToList(list) {
+  for (var i = list.length - 1; i >= 0; i--) {
+    addFettiClickListener(list[i]);
+  }
+}
 
-    var aWidth = this.offsetWidth;
-    var aHeight = this.offsetHeight;
-    var fWidth = this.offsetHeight;
-    var fHeight = this.offsetHeight
+function fettiBurstOnElement() {
+  var fettiDiv = document.createElement("div");
+  fettiDiv.className = "fetti";
 
-    var aCenX = aLeft + aWidth / 2;
-    var aCenY = aTop + aHeight / 2;
-    var fCenX = fLeft + fWidth / 2;
-    var fCenY = fTop + fHeight / 2;
+  var aLeft = this.getBoundingClientRect().left;
+  var aTop = this.getBoundingClientRect().top;
+  var fLeft = fettiDiv.getBoundingClientRect().left;
+  var fTop = fettiDiv.getBoundingClientRect().top;
 
-    fettiDiv.style.left = (aCenX - fWidth / 1) + "px";
-    fettiDiv.style.top = (aCenY - fHeight / 1) + "px";
+  var aWidth = this.offsetWidth;
+  var aHeight = this.offsetHeight;
+  var fWidth = fettiDiv.offsetWidth;
+  var fHeight = fettiDiv.offsetHeight;
 
-    var fCount = 50;
-    for(var i = 0; i != fCount; ++i) {
-      var piece = document.createElement("div");
-      piece.className = "fetti-piece";
-      var pWidth = piece.offsetWidth;
-      var pHeight = piece.offsetHeight;
+  var aCenX = aLeft + aWidth / 2;
+  var aCenY = aTop + aHeight / 2;
+  var fCenX = fLeft + fWidth / 2;
+  var fCenY = fTop + fHeight / 2;
 
-      var rVal = parseInt(Math.floor(Math.random() * 16).toString(), 16);
-      var gVal = parseInt(Math.floor(Math.random() * 16).toString(), 16);
-      var bVal = parseInt(Math.floor(Math.random() * 16).toString(), 16);
-      piece.style.backgroundColor = "#" + rVal + gVal + bVal;
+  fettiDiv.style.left = (aCenX - fWidth / 2) + window.scrollX + "px";
+  fettiDiv.style.top = (aCenY - fHeight / 2) + window.scrollY + "px";
 
-      piece.style.top = (fCenY + fHeight / 2 - pHeight / 2) + "px";
-      piece.style.left = (fCenX + fWidth / 2 - pWidth / 2) + "px";
+  var fettiPieceCount = 50;
+  for(var i = 0; i != fettiPieceCount; ++i) {
+    var piece = document.createElement("div");
+    piece.className = "fetti-piece";
+    var pWidth = piece.offsetWidth;
+    var pHeight = piece.offsetHeight;
 
-      var xTrans = (Math.random() - 0.5) * 100;
-      var yTrans = (Math.random() - 0.5) * 100;
-      piece.style.transition = "translate 10s ease";
+    var rVal = Math.floor(Math.random() * 8 + 8).toString(16);
+    var gVal = Math.floor(Math.random() * 8 + 8).toString(16);
+    var bVal = Math.floor(Math.random() * 8 + 8).toString(16);
+    piece.style.backgroundColor = "#" + rVal + gVal + bVal;
+
+    piece.style.top = (fCenY + fHeight / 2 - pHeight / 2) + "px";
+    piece.style.left = (fCenX + fWidth / 2 - pWidth / 2) + "px";
+
+    fettiDiv.appendChild(piece);
+  }
+
+  document.getElementsByTagName("body")[0].appendChild(fettiDiv);
+
+  //NOTE(adam): delayed adding translate css property to prevent browser reflow issues
+  setTimeout(function() {
+    for(var i = 0; i < fettiDiv.children.length; ++i) {
+      var piece = fettiDiv.children[i];
+
+      var xTrans = (Math.random() - 0.5) * 150;
+      var yTrans = (Math.random() - 0.5) * 150;
+
       piece.style.transform = `translate(${xTrans}px, ${yTrans}px)`;
-
-      fettiDiv.appendChild(piece);
     }
+  }, 1);
 
-    document.getElementsByTagName("body")[0].appendChild(fettiDiv);
-
-    setTimeout(function() {
-      var fettiList = document.getElementsByClassName("fetti");
-      for(var i = 0; i != fettiList.length; ++i) {
-        fettiList[i].parentElement.removeChild(fettiList[i]);
-      }
-    }, 1000);
-  };
+  setTimeout(function() {
+    fettiDiv.parentElement.removeChild(fettiDiv);
+  }, 1000);
 }
